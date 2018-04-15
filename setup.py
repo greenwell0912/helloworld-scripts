@@ -1,29 +1,27 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name="helloworld-scripts",
-    version="0.0.1",
-    py_modules=['world'],
-    package_dir={'': 'hello'},
-    install_requires=open('requirements.txt').read().splitlines(),
-    description="Hello World Scripts",
-    #long_description=open('README.txt').read(),
-    author='Hiroki Yamaguchi',
-    author_email='hiroki6357@gmail.com',
-    url='https://github.com/greenwell0912/helloworld-scripts',
-    keywords=["hello world", "console_scripts"],
-    license='MIT',
-    classifiers=[
-        "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python :: 3.5.2",
-    ],
+    version="0.1",
+    packages=find_packages(),
+    
     entry_points={
         "console_scripts": [
-            "helloworld=world:main",
+            "helloworld=hello.world:main",
         ],
     },
+    #install_requires=foo,
+
+    # metadata for upload to PyPI
+    #author='Hiroki Yamaguchi',
+    #author_email='hiroki6357@gmail.com',
+    #description="Hello World Scripts",
+    #license='MIT',
+    #keywords=["hello world", "console_scripts"],
+    #url='https://github.com/greenwell0912/helloworld-scripts',
+    
 )
 
